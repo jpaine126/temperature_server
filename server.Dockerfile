@@ -9,6 +9,9 @@ RUN apt-get install -y python3-venv
 RUN python3 --version
 
 # copy stuff over
+WORKDIR /app
+COPY ./tutorial ./tutorial
+COPY ./scripts ./scripts
 COPY ./requirements.txt ./
 
 # sever reqs
@@ -18,7 +21,5 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN python3 -m pip install -r ./requirements.txt
 
 # cmd
-COPY . /app/
-# CMD
-
-
+EXPOSE 8000
+CMD ./scripts/startup.sh && ./scripts/start_server.sh
