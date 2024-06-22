@@ -1,10 +1,11 @@
 from rest_framework import serializers
 
-from .models import TempReading
+from .models import Readings
 
-class TempReadingSerializer(serializers.ModelSerializer):
+
+class ReadingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TempReading
+        model = Readings
         fields = (
             "id",
             "time",

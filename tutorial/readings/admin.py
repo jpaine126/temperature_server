@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import TempReading
+from .models import Readings
 
-admin.site.register(TempReading)
+admin.site.register(Readings)
