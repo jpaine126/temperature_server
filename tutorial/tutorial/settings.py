@@ -22,20 +22,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (BASE_DIR / "secrets/secret_key").readline().strip()
+SECRET_KEY = (BASE_DIR / "../secrets/secret_key").open().readline().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
     i.strip()
-    for i in (BASE_DIR / "secrets/allowed_hosts").readlines()
+    for i in (BASE_DIR / "../secrets/allowed_hosts").open().readlines()
     if i.strip()[0] != "#"
 ]
 
 REST_SAFE_LIST_IPS = [
     i.strip()
-    for i in (BASE_DIR / "secrets/safe_ips").readlines()
+    for i in (BASE_DIR / "../secrets/safe_ips").open().readlines()
     if i.strip()[0] != "#"
 ]
 
