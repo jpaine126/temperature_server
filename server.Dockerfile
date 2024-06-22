@@ -12,6 +12,7 @@ RUN python3 --version
 WORKDIR /app
 COPY ./tutorial ./tutorial
 COPY ./scripts ./scripts
+COPY ./secrets ./secrets
 COPY ./requirements.txt ./
 
 # sever reqs
