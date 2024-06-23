@@ -1,5 +1,6 @@
-from django.db import models
 import uuid
+
+from django.db import models
 
 
 class Readings(models.Model):
@@ -20,7 +21,8 @@ class Readings(models.Model):
     def __str__(self):
         return (
             f"{self.__class__.__name__}({self.id=}, "
-            f"{self.time=}"
-            f"{self.temperature=}"
+            f"{self.location=}, "
+            f"{self.time=}, "
+            f"{self.temperature=}, "
             f"{self.humidity=})"
         )

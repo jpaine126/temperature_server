@@ -8,6 +8,7 @@ class ReadingSerializer(serializers.ModelSerializer):
         model = Readings
         fields = (
             "id",
+            "location",
             "time",
             "temperature",
             "humidity",
