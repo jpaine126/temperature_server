@@ -1,0 +1,3 @@
+board
+adafruit_sht4x
+requests
