@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    volumes:
+      - /var/www/temperature_server:/app/database
+  proxy:
+    image: nginx:latest
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - '8000:8000'

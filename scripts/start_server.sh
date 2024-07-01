@@ -13,5 +13,5 @@ cd $server_root
 gunicorn \
 --log-level debug \
 --timeout 90 \
--b "0.0.0.0:8000" \
+-b ":8000" \
 tutorial.wsgi:application
