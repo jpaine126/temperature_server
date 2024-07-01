@@ -1,3 +1,4 @@
 board
-adafruit_sht4x
+adafruit-blinka
+adafruit-circuitpython-sht4x
 requests
