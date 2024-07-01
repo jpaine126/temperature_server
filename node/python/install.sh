@@ -13,11 +13,11 @@ python -m venv "${install_location}/.venv"
 source "${install_location}/.venv/bin/activate"
 pip install -r "${install_location}/requirements.txt"
 
-sed -i "s/__INSTALL_LOCATION__/${install_location}/g" "${install_location}/reading_node.sh"
+sed -i "s+__INSTALL_LOCATION__+${install_location}+g" "${install_location}/reading_node.sh"
 
 # setup executable
-cp "${this_folder}/reading_node.sh" /usr/local/bin/
-chmod +x /usr/local/bin/reading_node.sh
+sudo ln -s "${install_location}/reading_node.sh" /usr/local/bin/
+sudo chmod +x "${install_location}/reading_node.sh"
 
 # setup systemd files
 sudo cp "${this_folder}/reading_node.service" /etc/systemd/system/
